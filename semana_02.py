@@ -6,18 +6,6 @@ def invertir_lista(lista):
 
 #ejercicio 2
 def collatz(nro):
-    var=nro
-    count=0
-    while var!=1:
-        if var%2==0:
-            var=var/2
-        else:
-            var=var*3+1
-        count+=1
-    return count
-
-#ejercicio 2
-def collatz(nro):
         var=nro
         count=0
         while var!=1:
@@ -28,9 +16,23 @@ def collatz(nro):
             count+=1
         return count
 
-print(collatz(1))
-print(collatz(2))
-print(collatz(3))
+#ejercicio 3
+def contar_definiciones(d):
+    claves=d.keys()
+    new_dicc={}
+    for clave in claves:
+        new_dicc[f'{clave}']=len(d[f'{clave}'])
+    return new_dicc
 
-    
+def cantidad_de_claves_letra(d, l):
+    claves=d.keys()
+    count=0
+    for clave in claves:
+        if clave[0]==l:
+            count+=1
+    return count
 
+d={'hola':['javier','susana'],'mama':['sofia'],'hapa':[]}
+print(d)
+print(contar_definiciones(d))
+print(cantidad_de_claves_letra(d,'l'))
