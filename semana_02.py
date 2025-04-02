@@ -73,20 +73,3 @@ def propagar(L):
                     LQ[j]=1
     
     return LQ
-
-casos_prueba = [
-    ([0, 1, 0], [1, 1, 1]),
-    ([ 0, 0, 0,-1, 1, 0, 0, 0,-1, 0, 1, 0, 0], [1, 1, -1, 0]),
-    ([0, 1, -1, 0, 0, 1, 0], [1, 1, -1, 1, 1, 1, 1]),
-    ([1, 1, 1, 1], [1, 1, 1, 1]),
-    ([0, 0, 0, 0], [0, 0, 0, 0]),
-    ([-1, -1, -1], [-1, -1, -1]),
-    ([1, 0, 0, 0, 1], [1, 1, 1, 1, 1]),
-    ([1, -1, 0, 1, -1, 0, 1], [1, -1, 0, 1, -1, 1, 1]),
-    ([-1, 0, 1, 0, -1], [-1, 1, 1, 1, -1]),
-    ([], []),
-]
-
-for entrada, esperado in casos_prueba:
-    resultado = propagar(entrada)
-    print(f"Entrada: {entrada} -> Resultado: {resultado} -> {'✅ Correcto' if resultado == esperado else '❌ Incorrecto'}")
