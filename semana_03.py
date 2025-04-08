@@ -45,4 +45,8 @@ def experimento_paquetes(n_repeticiones, figus_total, figus_paquete):
     promedio=sum(vector)/n_repeticiones
     return promedio
 
-
+if __name__=="__main__":
+    #Este espacio es para pruebas
+    print(experimento_figus(1000,6))
+    print(experimento_figus(100,860))
+    print(experimento_paquetes(100,860,5))
