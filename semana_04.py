@@ -37,7 +37,9 @@ def arbol_mas_popular(nombre_parque):
         return popular[0]
     
 def n_mas_altos2(nombre_parque, n):
-    
+    """
+    Devuelve los N arboles mas altos de un parque. No considera cuando hay mas de uno con la misma altura y hay que cortar (asigna de manera aleatoria ahi)
+    """
     dicc_tree=arboles_parque('arbolado-en-espacios-verdes.csv', nombre_parque)
 
     first=True
@@ -49,7 +51,7 @@ def n_mas_altos2(nombre_parque, n):
         else:
             agg_qc=False
             for pos in range(len(ordenados)):
-                if dicc_tree[key]['altura_tot'] >= dicc_tree[ordenados[pos]]['altura_tot'] and not agg_qc:
+                if float(dicc_tree[key]['altura_tot']) >= float(dicc_tree[ordenados[pos]]['altura_tot']) and not agg_qc:
                     ordenados.insert(pos, key)
                     agg_qc=True
             if not agg_qc:
@@ -58,7 +60,7 @@ def n_mas_altos2(nombre_parque, n):
 
 def n_mas_altos(nombre_parque, n):
     """
-    Devuelve los N arboles mas altos de un parque. No considera cuando hay mas de uno con la misma altura y hay que cortar
+    Devuelve los N arboles mas altos de un parque. No considera cuando hay mas de uno con la misma altura y hay que cortar (asigna de manera aleatoria ahi)
     """
     dicc_tree=arboles_parque('arbolado-en-espacios-verdes.csv', nombre_parque)
     lista_alturas=[]
@@ -72,7 +74,7 @@ def n_mas_altos(nombre_parque, n):
 
 def altura_promedio(nombre_parque, especie):
     """
-    Dado el nombre de un parque y una especie, la funcion calculara la altura promedio de este tipo de arbol en el espacio verde indicado
+    Dado el nombre de un parque y una especie, la funcion calculara la altura promedio de este tipo de arbol en el espacio verde indicado. Si no hay arboles de esa especie, la funcion devolvera 0.
     """
     dicc_tree=arboles_parque('arbolado-en-espacios-verdes.csv', nombre_parque)
     lista_alturas=[]
@@ -191,7 +193,7 @@ def lista_nativo(nombre_archivo):
 
 def ratio_nativos(nombre_archivo,espe_dicc):
     """
-    Calcula el ratio entre arboles exoticos y nativos
+    Calcula el ratio entre arboles exoticos y nativos. En caso de que el origen no este determinado, se considera exotico.
     """
     arboles_nativos=lista_nativo(nombre_archivo)
     cont_nativos=0
@@ -220,7 +222,7 @@ if __name__=="__main__":
     #print(arboles_parque('arbolado-en-espacios-verdes.csv','AVELLANEDA, NICOLÁS, Pres.'))
     print(arbol_mas_popular('AVELLANEDA, NICOLÁS, Pres.'))
     print(n_mas_altos('AVELLANEDA, NICOLÁS, Pres.', 10))
-    #print(n_mas_altos2('AVELLANEDA, NICOLÁS, Pres.', 10))
+    print(n_mas_altos2('AVELLANEDA, NICOLÁS, Pres.', 10))
     print(altura_promedio('AVELLANEDA, NICOLÁS, Pres.','Jacarandá'))
     #print(lista_parques('arbolado-en-espacios-verdes.csv'))
     print(analisis_parques('arbolado-en-espacios-verdes.csv'))
