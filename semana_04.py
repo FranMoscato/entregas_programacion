@@ -193,7 +193,7 @@ def lista_nativo(nombre_archivo):
 
 def ratio_nativos(nombre_archivo,espe_dicc):
     """
-    Calcula el ratio entre arboles exoticos y nativos. En caso de que el origen no este determinado, se considera exotico.
+    Calcula el ratio entre arboles exoticos y nativos.
     """
     arboles_nativos=lista_nativo(nombre_archivo)
     cont_nativos=0
@@ -207,6 +207,10 @@ def ratio_nativos(nombre_archivo,espe_dicc):
     return cont_exo/cont_nativos
 
 def analisis_parques(nombre_archivo):
+
+    """
+    Funcion creada para correr e imprimir los analisis del ejercicio 5
+    """
     parques=_dicc_parques(nombre_archivo)
     print(f"El/Los parques con mas arboles son: {parque_mas_arbolado(parques)}")
     print(f"El/Los parques con arboles mas altos en promedio son: {parque_mas_alto(parques)}")
