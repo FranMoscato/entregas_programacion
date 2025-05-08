@@ -1,0 +1,1 @@
+Hola. Tu entrega está muy bien, el código pasa los tests y el informe es correcto, aclarando por ejemplo que se consideraron las nativas y su complemento intencionalmente y no exactamente nativas vs exóticas. Saludos
